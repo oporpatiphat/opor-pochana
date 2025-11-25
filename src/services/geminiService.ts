@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 import { Tier } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// ใช้ (import.meta as any) เพื่อบังคับให้ TypeScript ยอมรับการดึงค่าจาก Vite
+const ai = new GoogleGenAI({ apiKey: (import.meta as any).env.VITE_API_KEY });
 
 const SYSTEM_PROMPT = `
 คุณคือ "เชฟโอปอ" เจ้าของร้าน "โอปอโภชนา" (Opor Pochana) ร้านอาหารอีสานรสเด็ดระดับตำนาน
